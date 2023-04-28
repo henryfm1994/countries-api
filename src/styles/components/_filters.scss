@@ -1,0 +1,80 @@
+.filters__container {
+  display: flex;
+  justify-content: space-between;
+  // margin: 2em;
+  // width: 100vw;
+}
+
+.filters__container .light {
+  background-color: $white;
+  color: $very-dark-blue-light;
+  // box-shadow: 0px 1px 10px $dark-gray;
+  box-shadow: 1px 1px 5px (lighten($color: $dark-gray, $amount: 35));
+}
+
+.filters__container .dark {
+  background-color: $dark-blue;
+  color: $white;
+  // box-shadow: 0 1px 10px $dark-gray;
+  box-shadow: 1px 1px 5px (darken($color: $dark-gray, $amount: 40));
+}
+
+.filter__input {
+  align-items: center;
+  border-radius: 4px;
+  display: flex;
+  gap: 1em;
+  height: 2.5rem;
+  padding: 0 2em;
+  width: 25vw;
+}
+
+.filter__input .light {
+  background-color: $white;
+  color: $very-dark-blue-light;
+}
+
+.filter__input .dark {
+  background-color: $dark-blue;
+  color: $white;
+}
+
+.filter__input input {
+  border: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.filter__regions {
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  // padding: 0 1em;
+}
+
+.filter__regions .light {
+  background-color: $white;
+  color: $very-dark-blue-light;
+}
+
+.filter__regions .dark {
+  background-color: $dark-blue;
+  color: $white;
+}
+
+.filter__regions select {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  // margin: 0 1em;
+  padding: 0 1em;
+
+  &:focus {
+    outline: none;
+  }
+}

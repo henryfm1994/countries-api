@@ -1,0 +1,35 @@
+.header__container {
+  padding: 1rem;
+}
+
+.header__container.light {
+  background-color: $white;
+  color: $very-dark-blue-light;
+  box-shadow: 1px 1px 5px (lighten($color: $dark-gray, $amount: 35));
+}
+
+.header__container.dark {
+  background-color: $dark-blue;
+  color: $white;
+  box-shadow: 1px 1px 5px (darken($color: $dark-gray, $amount: 40));
+}
+
+.header__container-box {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.header__title {
+  font-weight: 800;
+}
+
+.header__mode {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  gap: 8px;
+}
