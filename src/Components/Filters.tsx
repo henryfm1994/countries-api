@@ -5,18 +5,16 @@ import { useContext } from "react";
 export const Filters = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const context: {
-    theme: string;
-    setTheme: never;
-    style: string;
-    countries: [];
-    input: string;
-    setInput: any;
-    setRegion: any;
+    theme?: string;
+    style?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setInput?: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setRegion?: any;
   } = useContext(CountriesContext);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { theme, setTheme, style, countries, input, setInput, setRegion } =
-    context;
+  const { theme, style, setInput, setRegion } = context;
 
   const classname = theme
     ? { background: "hsl(0, 0%, 100%)", color: "hsl(209, 23%, 22%)" }

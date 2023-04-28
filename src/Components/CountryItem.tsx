@@ -1,14 +1,18 @@
 import { useContext } from "react";
 import { CountriesContext } from "./CountriesContext/CountriesContext";
 
-export const CountryItem = ({ country }) => {
+export const CountryItem = (country: {
+  name: { common: string };
+  population: string;
+  flags: { svg: string };
+  region: string;
+  capital: string;
+}) => {
   const context: {
-    theme: string;
-    setTheme: unknown;
-    style: string;
+    style?: string;
   } = useContext(CountriesContext);
 
-  const { theme, setTheme, style } = context;
+  const { style } = context;
 
   return (
     <div className={`country__box ${style}`}>

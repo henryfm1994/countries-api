@@ -4,7 +4,7 @@ import { HiOutlineMoon, HiMoon } from "react-icons/hi";
 
 export const Header = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const context: { theme: string; setTheme: any; style: string } =
+  const context: { theme?: string; setTheme?: any; style?: string } =
     useContext(CountriesContext);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
