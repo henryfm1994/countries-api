@@ -16,10 +16,6 @@ export const Filters = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { theme, style, setInput, setRegion } = context;
 
-  const classname = theme
-    ? { background: "hsl(0, 0%, 100%)", color: "hsl(209, 23%, 22%)" }
-    : { background: "hsl(209, 23%, 22%)", color: "hsl(0, 0%, 100%)" };
-
   // const filteredUsers = () => {
   //   return typeof input === "string" && input.length > 0
   //     ? countries.filter((country) => {
@@ -48,34 +44,35 @@ export const Filters = () => {
           onChange={(e) => setInput(e.target.value)}
         />
       </div>
-      <div className={`filter__regions ${style}`}>
-        <select
-          name="regions"
-          id="regions"
-          style={classname}
-          onChange={(e) => setRegion(e.target.value)}
-        >
-          <option value="" hidden>
-            Select by Region
-          </option>
-          <option className="filter__option" value="Africa">
-            Africa
-          </option>
-          <option className="filter__option" value="Americas">
-            Americas
-          </option>
-          <option className="filter__option" value="Asia">
-            Asia
-          </option>
-          <option className="filter__option" value="Europe">
-            Europe
-          </option>
-          <option className="filter__option" value="Oceania">
-            Oceania
-          </option>
-        </select>
-        {/* <HiChevronDown /> */}
-      </div>
+      {/* <div className={`filter__regions ${style}`}> */}
+      <select
+        name="regions"
+        id="regions"
+        // style={classname}
+        onChange={(e) => setRegion(e.target.value)}
+        className={`filter__regions ${style}`}
+      >
+        <option value="" hidden>
+          Select by Region
+        </option>
+        <option className="filter__option" value="Africa">
+          Africa
+        </option>
+        <option className="filter__option" value="Americas">
+          Americas
+        </option>
+        <option className="filter__option" value="Asia">
+          Asia
+        </option>
+        <option className="filter__option" value="Europe">
+          Europe
+        </option>
+        <option className="filter__option" value="Oceania">
+          Oceania
+        </option>
+      </select>
+      {/* <HiChevronDown /> */}
+      {/* </div> */}
     </div>
   );
 };

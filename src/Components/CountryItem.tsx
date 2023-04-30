@@ -10,12 +10,21 @@ export const CountryItem = (country: {
 }) => {
   const context: {
     style?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setDetails?: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setInput?: any;
   } = useContext(CountriesContext);
 
-  const { style } = context;
+  const { style, setDetails, setInput } = context;
+
+  const handleCountry = () => {
+    setDetails(country.name.common);
+    setInput("");
+  };
 
   return (
-    <div className={`country__box ${style}`}>
+    <div className={`country__box ${style}`} onClick={() => handleCountry()}>
       <img src={country.flags.svg} alt="flag" />
       <ul>
         <li className="country__name">{country.name.common}</li>

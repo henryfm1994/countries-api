@@ -8,26 +8,30 @@ import {
   getCountriesByInput,
   getCountriesByRegion,
 } from "./helpers/getCountries";
+import { APICountry } from "./types";
 
 function App() {
   const [theme, setTheme] = useState(true);
   const style = theme ? "light" : "dark";
   const [input, setInput] = useState("");
   const [region, setRegion] = useState("");
+  const [details, setDetails] = useState("");
 
-  const [countries, setcountries] = useState([]);
-
-  useEffect(() => {
-    getCountries().then((data) =>
-      setcountries(getCountriesByInput(input, data))
-    );
-  }, [input]);
+  const [countries, setcountries] = useState<APICountry[]>([]);
 
   useEffect(() => {
-    getCountries().then((data) =>
-      setcountries(getCountriesByRegion(region, data))
-    );
-  }, [region]);
+    getCountries().then((data) => {
+      const test = getCountriesByRegion(region, data);
+
+      setcountries(getCountriesByInput(input, test));
+    });
+  }, [input, region]);
+
+  // useEffect(() => {
+  //   const filteredCountry = [...countries];
+  //   // getCountries().then((data) =>
+  //   setcountries(getCountriesByInput(input, filteredCountry));
+  // }, [countries, input]);
 
   return (
     <>
@@ -41,6 +45,8 @@ function App() {
           setInput,
           region,
           setRegion,
+          details,
+          setDetails,
         }}
       >
         <div className="app__container">

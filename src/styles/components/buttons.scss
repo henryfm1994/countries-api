@@ -1,0 +1,21 @@
+.button {
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-right: 1em;
+  padding: 4px;
+  // width: 6em;
+}
+
+.button.light {
+  background-color: $white;
+  box-shadow: 1px 1px 5px (lighten($color: $dark-gray, $amount: 20));
+}
+
+.button.dark {
+  background-color: $dark-blue;
+  box-shadow: 1px 1px 5px (darken($color: $dark-gray, $amount: 40));
+}
